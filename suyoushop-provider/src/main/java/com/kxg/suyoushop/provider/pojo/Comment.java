@@ -5,16 +5,17 @@ import javax.persistence.*;
 
 @Table(name = "t_comment")
 public class Comment {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "order_id")
+    private Long orderId;
 
     @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "scenic_spot_id")
-    private Long scenicSpotId;
-
-    private String comment;
+    private String content;
 
     @Column(name = "create_time")
     private Date createTime;
@@ -37,6 +38,20 @@ public class Comment {
     }
 
     /**
+     * @return order_id
+     */
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    /**
+     * @param orderId
+     */
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    /**
      * @return user_id
      */
     public Long getUserId() {
@@ -51,31 +66,17 @@ public class Comment {
     }
 
     /**
-     * @return scenic_spot_id
+     * @return content
      */
-    public Long getScenicSpotId() {
-        return scenicSpotId;
+    public String getContent() {
+        return content;
     }
 
     /**
-     * @param scenicSpotId
+     * @param content
      */
-    public void setScenicSpotId(Long scenicSpotId) {
-        this.scenicSpotId = scenicSpotId;
-    }
-
-    /**
-     * @return comment
-     */
-    public String getComment() {
-        return comment;
-    }
-
-    /**
-     * @param comment
-     */
-    public void setComment(String comment) {
-        this.comment = comment == null ? null : comment.trim();
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
     }
 
     /**

@@ -5,14 +5,14 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <result column="id" jdbcType="INTEGER" property="id" />
-    <result column="book_id" jdbcType="INTEGER" property="bookId" />
-    <result column="book_mount" jdbcType="INTEGER" property="bookMount" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="car_id" jdbcType="BIGINT" property="carId" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="pay_code" jdbcType="VARCHAR" property="payCode" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="order_state" jdbcType="SMALLINT" property="orderState" />
-    <result column="received_info_id" jdbcType="INTEGER" property="receivedInfoId" />
-    <result column="total_price" jdbcType="DOUBLE" property="totalPrice" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="total_priece" jdbcType="DOUBLE" property="totalPriece" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="shop_id" jdbcType="BIGINT" property="shopId" />
   </resultMap>
 </mapper>

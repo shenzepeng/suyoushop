@@ -5,133 +5,56 @@ import javax.persistence.*;
 
 @Table(name = "t_user")
 public class User {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    private Integer age;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
-    @Column(name = "create_time")
-    private Date createTime;
-
-    @Column(name = "end_time")
-    private Date endTime;
+    private String password;
 
     @Column(name = "img_url")
     private String imgUrl;
 
-    private Short mark;
+    @Column(name = "create_time")
+    private Date createTime;
+
+    @Column(name = "update_time")
+    private Date updateTime;
 
     @Column(name = "nick_name")
     private String nickName;
 
-    private String password;
-
-    @Column(name = "phone_number")
-    private Long phoneNumber;
-
-    private Short sex;
-
-    /**
-     * 1-vip  0-普通用户
-     */
-    private Short vip;
+    @Column(name = "exist_money")
+    private Double existMoney;
 
     /**
      * @return id
      */
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
     /**
      * @param id
      */
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     /**
-     * @return age
+     * @return phone_number
      */
-    public Integer getAge() {
-        return age;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     /**
-     * @param age
+     * @param phoneNumber
      */
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    /**
-     * @return create_time
-     */
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    /**
-     * @param createTime
-     */
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    /**
-     * @return end_time
-     */
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    /**
-     * @param endTime
-     */
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    /**
-     * @return img_url
-     */
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    /**
-     * @param imgUrl
-     */
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl == null ? null : imgUrl.trim();
-    }
-
-    /**
-     * @return mark
-     */
-    public Short getMark() {
-        return mark;
-    }
-
-    /**
-     * @param mark
-     */
-    public void setMark(Short mark) {
-        this.mark = mark;
-    }
-
-    /**
-     * @return nick_name
-     */
-    public String getNickName() {
-        return nickName;
-    }
-
-    /**
-     * @param nickName
-     */
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber == null ? null : phoneNumber.trim();
     }
 
     /**
@@ -149,48 +72,72 @@ public class User {
     }
 
     /**
-     * @return phone_number
+     * @return img_url
      */
-    public Long getPhoneNumber() {
-        return phoneNumber;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
     /**
-     * @param phoneNumber
+     * @param imgUrl
      */
-    public void setPhoneNumber(Long phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl == null ? null : imgUrl.trim();
     }
 
     /**
-     * @return sex
+     * @return create_time
      */
-    public Short getSex() {
-        return sex;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
-     * @param sex
+     * @param createTime
      */
-    public void setSex(Short sex) {
-        this.sex = sex;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     /**
-     * 获取1-vip  0-普通用户
-     *
-     * @return vip - 1-vip  0-普通用户
+     * @return update_time
      */
-    public Short getVip() {
-        return vip;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
     /**
-     * 设置1-vip  0-普通用户
-     *
-     * @param vip 1-vip  0-普通用户
+     * @param updateTime
      */
-    public void setVip(Short vip) {
-        this.vip = vip;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    /**
+     * @return nick_name
+     */
+    public String getNickName() {
+        return nickName;
+    }
+
+    /**
+     * @param nickName
+     */
+    public void setNickName(String nickName) {
+        this.nickName = nickName == null ? null : nickName.trim();
+    }
+
+    /**
+     * @return exist_money
+     */
+    public Double getExistMoney() {
+        return existMoney;
+    }
+
+    /**
+     * @param existMoney
+     */
+    public void setExistMoney(Double existMoney) {
+        this.existMoney = existMoney;
     }
 }

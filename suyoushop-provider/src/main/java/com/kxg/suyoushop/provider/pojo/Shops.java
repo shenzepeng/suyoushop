@@ -4,7 +4,8 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_shop")
-public class Shop {
+public class Shops {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

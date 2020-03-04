@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 @Table(name = "t_logistics")
 public class Logistics {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

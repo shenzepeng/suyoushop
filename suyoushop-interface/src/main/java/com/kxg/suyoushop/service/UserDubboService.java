@@ -1,4 +1,4 @@
-package com.kxg.suyoushop;
+package com.kxg.suyoushop.service;
 
 import com.kxg.suyoushop.request.DeleteUserRequest;
 import com.kxg.suyoushop.request.LoginUserBySmsRequest;

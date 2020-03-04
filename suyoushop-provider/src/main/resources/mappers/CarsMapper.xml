@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kxg.suyoushop.provider.mapper.CarsMapper">
+  <resultMap id="BaseResultMap" type="com.kxg.suyoushop.provider.pojo.Cars">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
+    <result column="shop_id" jdbcType="BIGINT" property="shopId" />
+    <result column="good_name" jdbcType="VARCHAR" property="goodName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="numbers" jdbcType="BIGINT" property="numbers" />
+    <result column="total_price" jdbcType="DOUBLE" property="totalPrice" />
+  </resultMap>
+</mapper>

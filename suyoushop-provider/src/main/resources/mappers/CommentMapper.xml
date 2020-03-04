@@ -5,11 +5,11 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <result column="id" jdbcType="BIGINT" property="id" />
-    <result column="comment" jdbcType="VARCHAR" property="comment" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="scenic_spot_id" jdbcType="BIGINT" property="scenicSpotId" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
 </mapper>

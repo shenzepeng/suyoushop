@@ -4,7 +4,8 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_second_comment")
-public class SecondComment {
+public class SecondComments {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

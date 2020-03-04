@@ -4,7 +4,8 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_pay")
-public class PayInfo {
+public class Pay {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

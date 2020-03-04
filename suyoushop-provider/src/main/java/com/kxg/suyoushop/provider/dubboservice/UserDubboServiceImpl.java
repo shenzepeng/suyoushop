@@ -1,6 +1,6 @@
 package com.kxg.suyoushop.provider.dubboservice;
 
-import com.kxg.suyoushop.UserDubboService;
+import com.kxg.suyoushop.service.UserDubboService;
 import com.kxg.suyoushop.dto.UserDto;
 import com.kxg.suyoushop.provider.pojo.User;
 import com.kxg.suyoushop.provider.service.UserService;

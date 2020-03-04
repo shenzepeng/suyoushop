@@ -5,19 +5,17 @@ import javax.persistence.*;
 
 @Table(name = "t_order")
 public class Orders {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    @Column(name = "order_time")
-    private Date orderTime;
+    @Column(name = "car_id")
+    private Long carId;
 
-    @Column(name = "project_id")
-    private Integer projectId;
+    private Short status;
 
-    private Integer status;
-
-    @Column(name = "user_id")
-    private Integer userId;
+    @Column(name = "pay_code")
+    private String payCode;
 
     @Column(name = "create_time")
     private Date createTime;
@@ -25,74 +23,69 @@ public class Orders {
     @Column(name = "update_time")
     private Date updateTime;
 
+    @Column(name = "total_priece")
+    private Double totalPriece;
+
+    @Column(name = "user_id")
+    private Long userId;
+
+    @Column(name = "shop_id")
+    private Long shopId;
+
     /**
      * @return id
      */
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
     /**
      * @param id
      */
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     /**
-     * @return order_time
+     * @return car_id
      */
-    public Date getOrderTime() {
-        return orderTime;
+    public Long getCarId() {
+        return carId;
     }
 
     /**
-     * @param orderTime
+     * @param carId
      */
-    public void setOrderTime(Date orderTime) {
-        this.orderTime = orderTime;
-    }
-
-    /**
-     * @return project_id
-     */
-    public Integer getProjectId() {
-        return projectId;
-    }
-
-    /**
-     * @param projectId
-     */
-    public void setProjectId(Integer projectId) {
-        this.projectId = projectId;
+    public void setCarId(Long carId) {
+        this.carId = carId;
     }
 
     /**
      * @return status
      */
-    public Integer getStatus() {
+    public Short getStatus() {
         return status;
     }
 
     /**
      * @param status
      */
-    public void setStatus(Integer status) {
+    public void setStatus(Short status) {
         this.status = status;
     }
 
     /**
-     * @return user_id
+     * @return pay_code
      */
-    public Integer getUserId() {
-        return userId;
+    public String getPayCode() {
+        return payCode;
     }
 
     /**
-     * @param userId
+     * @param payCode
      */
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setPayCode(String payCode) {
+        this.payCode = payCode == null ? null : payCode.trim();
     }
 
     /**
@@ -121,5 +114,47 @@ public class Orders {
      */
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    /**
+     * @return total_priece
+     */
+    public Double getTotalPriece() {
+        return totalPriece;
+    }
+
+    /**
+     * @param totalPriece
+     */
+    public void setTotalPriece(Double totalPriece) {
+        this.totalPriece = totalPriece;
+    }
+
+    /**
+     * @return user_id
+     */
+    public Long getUserId() {
+        return userId;
+    }
+
+    /**
+     * @param userId
+     */
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * @return shop_id
+     */
+    public Long getShopId() {
+        return shopId;
+    }
+
+    /**
+     * @param shopId
+     */
+    public void setShopId(Long shopId) {
+        this.shopId = shopId;
     }
 }

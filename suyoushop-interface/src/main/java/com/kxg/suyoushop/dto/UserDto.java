@@ -7,32 +7,25 @@ import java.util.Date;
 
 @Data
 public class UserDto implements Serializable {
+    private Long id;
 
-    private Integer id;
 
-    private Integer age;
+    private String phoneNumber;
+
+    private String password;
+
+
+    private String imgUrl;
 
 
     private Date createTime;
 
 
-    private Date endTime;
-
-
-    private String imgUrl;
-
-    private Short mark;
+    private Date updateTime;
 
 
     private String nickName;
 
-    private String password;
 
-
-    private Long phoneNumber;
-
-    private Short sex;
-
-
-    private Short vip;
+    private Double existMoney;
 }

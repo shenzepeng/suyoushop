@@ -5,27 +5,22 @@ import javax.persistence.*;
 
 @Table(name = "t_goods")
 public class Goods {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
+
+    @Column(name = "shop_id")
+    private Long shopId;
 
     private String name;
 
-    @Column(name = "store_id")
-    private Integer storeId;
-
-    private Integer stock;
-
     private Double price;
 
-    @Column(name = "main_image_url")
-    private String mainImageUrl;
+    @Column(name = "good_img")
+    private String goodImg;
 
-    private String brief;
-
-    private Short status;
-
-    @Column(name = "g_address")
-    private String gAddress;
+    @Column(name = "exist_number")
+    private Long existNumber;
 
     @Column(name = "create_time")
     private Date createTime;
@@ -33,21 +28,34 @@ public class Goods {
     @Column(name = "update_time")
     private Date updateTime;
 
-    @Column(name = "sub_images_url")
-    private String subImagesUrl;
+    private Short status;
 
     /**
      * @return id
      */
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
     /**
      * @param id
      */
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    /**
+     * @return shop_id
+     */
+    public Long getShopId() {
+        return shopId;
+    }
+
+    /**
+     * @param shopId
+     */
+    public void setShopId(Long shopId) {
+        this.shopId = shopId;
     }
 
     /**
@@ -65,34 +73,6 @@ public class Goods {
     }
 
     /**
-     * @return store_id
-     */
-    public Integer getStoreId() {
-        return storeId;
-    }
-
-    /**
-     * @param storeId
-     */
-    public void setStoreId(Integer storeId) {
-        this.storeId = storeId;
-    }
-
-    /**
-     * @return stock
-     */
-    public Integer getStock() {
-        return stock;
-    }
-
-    /**
-     * @param stock
-     */
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
-
-    /**
      * @return price
      */
     public Double getPrice() {
@@ -107,59 +87,31 @@ public class Goods {
     }
 
     /**
-     * @return main_image_url
+     * @return good_img
      */
-    public String getMainImageUrl() {
-        return mainImageUrl;
+    public String getGoodImg() {
+        return goodImg;
     }
 
     /**
-     * @param mainImageUrl
+     * @param goodImg
      */
-    public void setMainImageUrl(String mainImageUrl) {
-        this.mainImageUrl = mainImageUrl == null ? null : mainImageUrl.trim();
+    public void setGoodImg(String goodImg) {
+        this.goodImg = goodImg == null ? null : goodImg.trim();
     }
 
     /**
-     * @return brief
+     * @return exist_number
      */
-    public String getBrief() {
-        return brief;
+    public Long getExistNumber() {
+        return existNumber;
     }
 
     /**
-     * @param brief
+     * @param existNumber
      */
-    public void setBrief(String brief) {
-        this.brief = brief == null ? null : brief.trim();
-    }
-
-    /**
-     * @return status
-     */
-    public Short getStatus() {
-        return status;
-    }
-
-    /**
-     * @param status
-     */
-    public void setStatus(Short status) {
-        this.status = status;
-    }
-
-    /**
-     * @return g_address
-     */
-    public String getgAddress() {
-        return gAddress;
-    }
-
-    /**
-     * @param gAddress
-     */
-    public void setgAddress(String gAddress) {
-        this.gAddress = gAddress == null ? null : gAddress.trim();
+    public void setExistNumber(Long existNumber) {
+        this.existNumber = existNumber;
     }
 
     /**
@@ -191,16 +143,16 @@ public class Goods {
     }
 
     /**
-     * @return sub_images_url
+     * @return status
      */
-    public String getSubImagesUrl() {
-        return subImagesUrl;
+    public Short getStatus() {
+        return status;
     }
 
     /**
-     * @param subImagesUrl
+     * @param status
      */
-    public void setSubImagesUrl(String subImagesUrl) {
-        this.subImagesUrl = subImagesUrl == null ? null : subImagesUrl.trim();
+    public void setStatus(Short status) {
+        this.status = status;
     }
 }

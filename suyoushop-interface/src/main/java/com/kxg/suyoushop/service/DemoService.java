@@ -1,4 +1,4 @@
-package com.kxg.suyoushop;
+package com.kxg.suyoushop.service;
 
 public interface DemoService {
 

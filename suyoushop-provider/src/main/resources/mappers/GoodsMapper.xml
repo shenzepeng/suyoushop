@@ -5,14 +5,14 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <result column="id" jdbcType="BIGINT" property="id" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="shop_id" jdbcType="BIGINT" property="shopId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
     <result column="good_img" jdbcType="VARCHAR" property="goodImg" />
-    <result column="good_imgs" jdbcType="VARCHAR" property="goodImgs" />
-    <result column="good_name" jdbcType="VARCHAR" property="goodName" />
-    <result column="good_number" jdbcType="INTEGER" property="goodNumber" />
-    <result column="good_price" jdbcType="DOUBLE" property="goodPrice" />
-    <result column="type_id" jdbcType="BIGINT" property="typeId" />
+    <result column="exist_number" jdbcType="BIGINT" property="existNumber" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
   </resultMap>
 </mapper>

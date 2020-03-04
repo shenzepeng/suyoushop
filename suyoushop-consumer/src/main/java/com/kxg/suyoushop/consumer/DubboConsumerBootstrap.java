@@ -1,6 +1,6 @@
 package com.kxg.suyoushop.consumer;
 
-import com.kxg.suyoushop.DemoService;
+import com.kxg.suyoushop.service.DemoService;
 
 import org.apache.dubbo.config.annotation.Reference;
 
@@ -22,7 +22,7 @@ public class DubboConsumerBootstrap {
     private DemoService demoService;
 
     public static void main(String[] args) {
-        SpringApplication.run(DubboConsumerBootstrap.class).close();
+        SpringApplication.run(DubboConsumerBootstrap.class,args);
     }
 
     @Bean
