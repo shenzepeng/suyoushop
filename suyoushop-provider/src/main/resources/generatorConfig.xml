@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--导入属性配置 -->
+    <!--<properties resource="generator.properties"></properties>-->
+
+    <!--指定特定数据库的jdbc驱动jar包的位置 -->
+    <!--    <classPathEntry
+                location="/Users/mac/.m2/repository/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27.jar"/>-->
+    <classPathEntry
+            location="C:\Users\Administrator\IdeaProjects\post_horse\target\post_horse-0.0.1-SNAPSHOT\WEB-INF\lib\mysql-connector-java-6.0.6.jar"/>
+    <context id="MySql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.example.springboot_test4.mapper.CommonMapper"/>
+            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+        <!-- optional，旨在创建class时，对注释进行控制 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--jdbc的数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://101.132.33.149:3306/suyoushop"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+        <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制-->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- Model模型生成器,用来生成含有主键key的类，记录类 以及查询Example类
+            targetPackage     指定生成的model生成所在的包名
+            targetProject     指定在该项目下所在的路径
+        -->
+        <javaModelGenerator targetPackage="com.kxg.suyoushop.provider.pojo" targetProject="src/main/java">
+            <!-- 是否对model添加 构造函数 -->
+            <!--<property name="constructorBased" value="true"/>-->
+            <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 -->
+            <property name="immutable" value="false"/>
+            <!-- 给Model添加一个父类 -->
+            <!--<property name="rootClass" value="com."/>-->
+            <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+        <javaClientGenerator targetPackage="com.kxg.suyoushop.provider.mapper" targetProject="src/main/java"
+                             type="XMLMAPPER">
+            <!--<property name="enableSubPackages" value=""/>-->
+            <!--
+                    定义Maper.java 源代码中的ByExample() 方法的可视性，可选的值有：
+                    public;
+                    private;
+                    protected;
+                    default
+                    注意：如果 targetRuntime="MyBatis3",此参数被忽略
+             -->
+            <!--<property name="exampleMethodVisibility" value=""/>-->
+            <!--
+                  方法名计数器
+              Important note: this property is ignored if the target runtime is MyBatis3.
+             -->
+            <!--<property name="methodNameCalculator" value=""/>-->
+            <!--
+                  为生成的接口添加父接口
+             -->
+            <!--<property name="rootInterface" value="com.weimob.elasticjob.dao.core.CommonMapper"/>-->
+        </javaClientGenerator>
+        <table tableName="t_car" domainObjectName="Car">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_comment" domainObjectName="Comment">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_goods" domainObjectName="Goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_logistics" domainObjectName="Logistics">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_order" domainObjectName="Orders">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_pay" domainObjectName="PayInfo">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_second_comment" domainObjectName="SecondComment">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_shop" domainObjectName="Shop">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_user" domainObjectName="User">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+
+    </context>
+</generatorConfiguration>
