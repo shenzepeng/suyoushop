@@ -1,4 +1,4 @@
-package com.kxg.suyoushop.provider;
+package com.kxg.suyoushop.provider.dubboservice;
 
 import org.apache.dubbo.config.annotation.Service;
 import com.kxg.suyoushop.DemoService;
