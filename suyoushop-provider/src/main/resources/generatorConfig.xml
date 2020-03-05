@@ -69,7 +69,6 @@
             <!--
                   为生成的接口添加父接口
              -->
-            <!--<property name="rootInterface" value="com.weimob.elasticjob.dao.core.CommonMapper"/>-->
         </javaClientGenerator>
         <table tableName="t_car" domainObjectName="Car">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
