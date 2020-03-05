@@ -24,9 +24,9 @@
         </commentGenerator>
         <!--jdbc的数据库连接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://101.132.33.149:3306/suyoushop"
+                        connectionURL="jdbc:mysql://*******:3306/suyoushop"
                         userId="root"
-                        password="123456">
+                        password="******">
         </jdbcConnection>
         <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制-->
         <javaTypeResolver>
