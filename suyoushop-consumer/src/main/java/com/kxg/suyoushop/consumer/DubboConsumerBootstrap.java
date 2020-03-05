@@ -22,7 +22,7 @@ public class DubboConsumerBootstrap {
     private DemoService demoService;
 
     public static void main(String[] args) {
-        SpringApplication.run(DubboConsumerBootstrap.class).close();
+        SpringApplication.run(DubboConsumerBootstrap.class,args);
     }
 
     @Bean
