@@ -1,4 +1,4 @@
-package com.kxg.suyoushop.provider.service.UserImpl;
+package com.kxg.suyoushop.provider.service.impl;
 
 import com.kxg.suyoushop.provider.pojo.User;
 import com.kxg.suyoushop.provider.service.UserService;

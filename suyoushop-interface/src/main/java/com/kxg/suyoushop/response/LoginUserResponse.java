@@ -8,4 +8,5 @@ import java.io.Serializable;
 public class LoginUserResponse implements Serializable {
     private UserDto userDto;
     private String msg;
+    private String token;
 }
