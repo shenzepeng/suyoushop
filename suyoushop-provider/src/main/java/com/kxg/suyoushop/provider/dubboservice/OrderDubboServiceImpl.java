@@ -12,17 +12,26 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 @Slf4j
 @Service(version = "1.0.0")
 public class OrderDubboServiceImpl implements OrderDubboService {
     @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+    @Autowired
     private OrderService orderService;
+    private ReentrantLock reentrantLock;
+    private ReentrantReadWriteLock reentrantReadWriteLock;
     @Override
     public AddNewOrderResponse addNewOrder(AddNewOrderRequest request) {
+
         Orders orders=new Orders();
         orders.setCarId(request.getCarId());
         orders.setCreateTime(new Date());
@@ -33,6 +42,7 @@ public class OrderDubboServiceImpl implements OrderDubboService {
         Integer result = orderService.addNewOrder(orders);
         AddNewOrderResponse response=new AddNewOrderResponse();
         response.setEnd(result);
+        reentrantLock.unlock();
         return response;
     }
 

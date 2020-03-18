@@ -11,4 +11,11 @@ public class SuYouShopConstants {
      * 放弃支付
      */
     public final static Short GIVE_UP_PAY=2;
+
+    /**
+     * 商品的状态
+     */
+    public final static Short ADD_GOODS_SUCCESSFUL=0;
+    public final static Short ADD_GOODS_FAIL=1;
+
 }
